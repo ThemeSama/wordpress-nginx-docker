@@ -5,13 +5,10 @@ services:
     container_name: nginx
     ports:
       - '80:80'
-      - '443:443'
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./logs/nginx:/var/log/nginx
       - ./wordpress:/var/www/html
-      - ./certs:/etc/letsencrypt
-      - ./certs-data:/data/letsencrypt
     links:
       - wordpress
     restart: always
